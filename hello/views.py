@@ -13,7 +13,7 @@ def index(request):
     # print(r.text)
     # return HttpResponse('<pre>' + r.text + '</pre>')
     times = int(os.environ.get('TIMES',3))
-    return HttpResponse('Hello!'*times)
+    return HttpResponse('heroku-python-boilerplate'+' HPB!'*times)
 
 def db(request):
 
