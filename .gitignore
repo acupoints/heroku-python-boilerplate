@@ -1,5 +1,0 @@
-django_server/__pycache__/
-apis/__pycache__/
-apis/migrations/
-apis/react_client/node_modules/
-apis/react_client/.gitignore
