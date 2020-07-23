@@ -124,5 +124,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "apis/templates/static"),
 ]
+SECURE_SSL_REDIRECT = True
 
 django_heroku.settings(locals())
