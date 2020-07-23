@@ -1,0 +1,4 @@
+apis/__pycache__/
+apis/migrations/
+django_server/__pycache__/
+apis/react_client/node_modules/
