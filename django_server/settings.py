@@ -122,6 +122,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "apis/templates/static"),
+    os.path.join(BASE_DIR, "apis/templates"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECURE_SSL_REDIRECT = True
