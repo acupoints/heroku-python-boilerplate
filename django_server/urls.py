@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', apis_views.hello),
     ## Solve the problem that Django React cannot find /favicon.ico
-    path('/favicon.ico', serve, {'path': '/static/favicon.ico'}),
-    path('/logo192.png', serve, {'path': '/static/logo192.png'}),
+    path('/favicon.ico', serve, {'path': '/favicon.ico'}),
+    path('/logo192.png', serve, {'path': '/logo192.png'}),
 ]
