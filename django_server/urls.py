@@ -20,6 +20,9 @@ from apis import views as apis_views
 # from django.contrib.staticfiles.views import serve
 # from django.contrib.staticfiles.storage import staticfiles_storage
 # from django.views.generic.base import RedirectView
+##
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,10 +32,4 @@ urlpatterns = [
     # path('logo192.png', serve, {'path': 'logo192.png'}),
     # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
     # path('logo192.png', RedirectView.as_view(url=staticfiles_storage.url('logo192.png'))),
-] 
-
-##
-from django.conf.urls.static import static
-from django.conf import settings
-
-urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
