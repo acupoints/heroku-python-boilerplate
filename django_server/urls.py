@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apis import views as apis_views
+## Solve the problem that Django React cannot find /favicon.ico
+from django.contrib.staticfiles.views import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', apis_views.hello),
+    ## Solve the problem that Django React cannot find /favicon.ico
+    path('/favicon.ico', serve, {'path': '/static/favicon.ico'}),
+    path('/logo192.png', serve, {'path': '/static/logo192.png'}),
 ]
