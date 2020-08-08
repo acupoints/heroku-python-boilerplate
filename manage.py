@@ -5,7 +5,9 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_server.settings')
+    # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_server.settings')
+    django_server_profile = os.environ.get('DJANGO_SERVER_PROFILE', 'development')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_server.settings.{}'.format(django_server_profile))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
