@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
     # All static resources must add directory fragment /static
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
 # import django_heroku
 django_heroku.settings(locals())
