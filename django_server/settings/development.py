@@ -6,3 +6,5 @@ from ..settings_original import *
 
 # import django_heroku
 # django_heroku.settings(locals())
+
+django_heroku.settings(locals())
