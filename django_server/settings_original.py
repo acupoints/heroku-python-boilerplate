@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -129,6 +128,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # SECURE_SSL_REDIRECT = True
 
-# import django_heroku
+# Only used to set local environment variables
+# Local environment variables, set to development means development, if not set means production
+import django_heroku
 django_heroku.settings(locals())
 
