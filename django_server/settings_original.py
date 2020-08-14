@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apis',
+    'rest_framework',
+    'django_filters',
+    'drf_yasg',
+    'fyrest',
+    'jwtauth',
 ]
 
 MIDDLEWARE = [
@@ -75,9 +80,15 @@ WSGI_APPLICATION = 'django_server.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'original': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'testdb2',
+        'USER': 'postgres',
+        'PASSWORD': 'Umph2014',
     }
 }
 
@@ -132,4 +143,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Local environment variables, set to development means development, if not set means production
 import django_heroku
 django_heroku.settings(locals())
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        # 'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+}
 
